@@ -1,12 +1,25 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View,  } from "react-native";
+import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {  NavigationContainer  } from '@react-navigation/native';
 import Title from './src/components/Title';
 import FormIMC from "./src/components/FormIMC";
+import CuidadosIMC from "./src/components/Cuidados";
+
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  return(
+  return (
     <View style={styles.container}>
       <Title />
       <FormIMC />
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="FormIMC" component={FormIMC} options={{ title: 'Calculadora IMC' }} />
+          <Stack.Screen name="Cuidados" component={CuidadosIMC} options={{ title: 'O que é IMC?' }} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </View>
   );
 }
