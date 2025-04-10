@@ -60,7 +60,7 @@ export default function CuidadosIMC() {
 
 const styles = StyleSheet.create({
     container: {
-      padding: 20,
+      padding: 25,
       backgroundColor: '#fff',
     },
     titulo: {
