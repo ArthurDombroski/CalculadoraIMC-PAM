@@ -1,44 +1,41 @@
 import React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet, View } from 'react-native';
+
 
 function classificarIMC(imc) {
-  if (imc < 18.5) {
-    return "Abaixo do peso";
-  } else if (imc >= 18.5 && imc <= 24.9) {
-    return "Peso normal";
-  } else if (imc >= 25 && imc <= 29.9) {
-    return "Sobrepeso";
-  } else if (imc >= 30 && imc <= 34.9) {
-    return "Obesidade grau 1";
-  } else if (imc >= 35 && imc <= 39.9) {
-    return "Obesidade grau 2";
-  } else {
-    return "Obesidade grau 3 (obesidade mórbida)";
-  }
+  if (imc < 18.5) return "Abaixo do peso";
+  else if (imc <= 24.9) return "Peso normal";
+  else if (imc <= 29.9) return "Sobrepeso";
+  else if (imc <= 34.9) return "Obesidade grau 1";
+  else if (imc <= 39.9) return "Obesidade grau 2";
+  else return "Obesidade grau 3 (obesidade mórbida)";
 }
 
 const Result = ({ imc }) => {
-  return (
-    <Text style={styles.result}>
-      Seu IMC é: {imc}
-    </Text>
-  );
-};
+  const valorIMC = parseFloat(imc);
+  const classificacao = classificarIMC(valorIMC);
 
-const Tabela = ({ imc }) => {
   return (
-    <Text style={styles.result}>
-      {classificarIMC}
-    </Text>
+    <View style={styles.container}>
+      <Text style={styles.result}>Seu IMC é: {imc}</Text>
+      <Text style={styles.classificacao}>Classificação: {classificacao}</Text>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  result: {
+  container: {
     marginTop: 20,
+    alignItems: 'center',
+  },
+  result: {
     fontSize: 24,
-    textAlign: 'center',
     color: '#333',
+  },
+  classificacao: {
+    fontSize: 18,
+    marginTop: 8,
+    color: '#666',
   },
 });
 
