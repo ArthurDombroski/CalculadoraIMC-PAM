@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text ,TextInput, Button, StyleSheet, TouchableOpacity, navigation } from 'react-native';
 import Result from './Result';
 
 const FormIMC = () => {
