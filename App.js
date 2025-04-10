@@ -15,9 +15,9 @@ export default function App() {
       <Title />
       <FormIMC />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="FormIMC" component={FormIMC} options={{ title: 'Calculadora IMC' }} />
-          <Stack.Screen name="Cuidados" component={CuidadosIMC} options={{ title: 'O que é IMC?' }} />
+        <Stack.Navigator initialRouteName="FormIMC">
+          <Stack.Screen name="FormIMC" component={FormIMC} />
+          <Stack.Screen name="Cuidados" component={CuidadosIMC} />
         </Stack.Navigator>
       </NavigationContainer>
     </View>

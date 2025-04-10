@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text ,TextInput, Button, StyleSheet, TouchableOpacity, Navigation} from 'react-native';
+import { View, Text ,TextInput, Button, StyleSheet, TouchableOpacity} from 'react-native';
 import Result from './Result';
 import Cuidados from './Cuidados';
 
-const FormIMC = () => {
+const FormIMC = ({navigation}) => {
   const [peso, setPeso] = useState('');
   const [altura, setAltura] = useState('');
   const [imc, setImc] = useState(null);
@@ -35,7 +35,7 @@ const FormIMC = () => {
       <Button title="Calcular IMC" onPress={calcularIMC} />
       {imc && <Result imc={imc} />}
 
-      <TouchableOpacity style={styles.cuidados} onPress={() => Navigation.navigate('Cuidados')}>
+      <TouchableOpacity style={styles.cuidados} onPress={() => navigation.navigate('Cuidados')}>
         <Text style={styles.textocuidados}>Saiba como se Cuidar</Text>
       </TouchableOpacity>
     </View>
