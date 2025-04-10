@@ -33,6 +33,11 @@ const FormIMC = () => {
       />
       <Button title="Calcular IMC" onPress={calcularIMC} />
       {imc && <Result imc={imc} />}
+
+      <TouchableOpacity style={styles.cuidados} onPress={() => navigation.navigate('Cuidados')}>
+        <Text style={styles.textocuidados}>Saiba como se Cuidar</Text>
+      </TouchableOpacity>
+
     </View>
   );
 };
@@ -50,6 +55,18 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     paddingHorizontal: 8,
     borderRadius: 5,
+  },
+  cuidados: {
+    marginTop: 30,
+    padding: 12,
+    borderRadius: 10,
+    backgroundColor: '#2196F3',
+    alignItems: 'center',
+  },
+  textocuidados: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 });
 
