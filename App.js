@@ -13,7 +13,6 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Title />
-      <FormIMC />
       <NavigationContainer>
         <Stack.Navigator initialRouteName="FormIMC">
           <Stack.Screen name="FormIMC" component={FormIMC} />
